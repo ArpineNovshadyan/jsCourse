@@ -24,6 +24,25 @@ function Merge2SortedArrays(arr1, arr2) {
         }
     }
     return mergedArr;
+
+    const mergedArr = [];
+
+    let arr1Index = 0;
+    let arr2Index = 0;
+    while (arr1Index < arr1.length && arr2Index < arr2.length) {
+        if (arr1[arr1Index] < arr2[arr2Index])
+            mergedArr.push(arr1[arr1Index++]);
+        else
+            mergedArr.push(arr2[arr2Index++]);
+    }
+    while (arr1Index < arr1.length) {
+        mergedArr.push(arr1[arr1Index++]);
+    }
+
+    while (arr2Index < arr2.length) {
+        mergedArr.push(arr2[arr2Index++]);
+    }
+    return mergedArr;
 }
 
 function MergeNSortedArrays() {
